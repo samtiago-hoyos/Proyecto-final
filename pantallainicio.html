@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustReview - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <img src="imagenes/logo.png" alt="">
+        <div class="search-container-nav">
+            <input type="text" placeholder="Buscar películas, música o amigos..." id="main-search">
+            <button>🔍</button>
+        </div>
+        <div class="user-info">
+            <span id="display-user">Usuario</span>
+            <div class="user-avatar-mini">👤</div>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <a href="index.html" class="icon active" title="Inicio">▶</a>
+        <a href="comunidades.html" class="icon" title="Comunidades">👥</a>
+        <div class="icon" title="Favoritos">❤️</div>
+        <div class="icon" title="Mi Perfil">👤</div>
+        <div class="icon" title="Cerrar Sesión" onclick="logout()">🚪</div>
+    </aside>
+
+    <main class="main-content">
+        
+        <section class="category-section">
+            <h2 class="category-title">Películas en Tendencia</h2>
+            <div class="cards-container">
+                
+                <div class="card">
+                    <div class="badge">Nuevo</div>
+                    <img src="imagenes/poster1.jpg" alt="Pelicula 1">
+                    <div class="card-info">
+                        <div class="stars-rating" data-movie="p1">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <input type="text" class="comment-input" placeholder="Deja tu reseña...">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagenes/poster2.jpg" alt="Pelicula 2">
+                    <div class="card-info">
+                        <div class="stars-rating" data-movie="p2">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <input type="text" class="comment-input" placeholder="Deja tu reseña...">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Eventos Deportivos</h2>
+            <div class="cards-container">
+                <div class="card football-card">
+                    <div class="join-tag">EN VIVO</div>
+                    <img src="imagenes/partido.jpeg" alt="Futbol">
+                    <div class="card-overlay">
+                        <span class="match-title">COLOMBIA vs URUGUAY</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
