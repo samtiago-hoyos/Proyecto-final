@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustReview - Cartelera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button id="openSidebar" class="btn-menu">☰</button>
+            <img src="imagenes/logo.png" alt="TrustReview Logo" class="nav-logo">
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar películas, series, música...">
+            <button class="search-icon">🔍</button>
+        </div>
+
+        <div class="login-actions" id="authZone">
+            <!-- Si NO hay sesión -->
+            <div id="guestButtons">
+                <button class="btn-yellow" onclick="abrirModal('login')">Iniciar Sesión</button>
+                <button class="btn-yellow" onclick="abrirModal('registro')">Registrarme</button>
+            </div>
+            <!-- Si HAY sesión -->
+            <div id="userButtons" style="display:none; align-items:center; gap:10px;">
+                <span>👤</span>
+                <span id="display-user" style="color:var(--accent-cyan); font-weight:bold;"></span>
+                <button class="btn-yellow" onclick="logout()">Salir</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== OVERLAY SIDEBAR ===== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="mainSidebar">
+        <div class="sidebar-header">
+            <h3>☰ MENÚ</h3>
+            <button id="closeSidebar" class="btn-close">×</button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-item" onclick="window.location.href='index.html'">
+                <span>🏠</span> Inicio
+            </div>
+            <div class="sidebar-item" onclick="window.location.href='perfil.html'">
+                <span>👤</span> Perfil
+            </div>
+            <div class="sidebar-item" onclick="window.location.href='categorias.html'">
+                <span>📂</span> Categorías
+            </div>
+            <div class="sidebar-item" onclick="window.location.href='comunidades.html'">
+                <span>🌐</span> Comunidad
+            </div>
+            <div class="sidebar-item" onclick="window.location.href='usuarios.html'">
+                <span>👥</span> Amigos
+            </div>
+            <hr class="sidebar-divider">
+            <div class="sidebar-item" onclick="abrirModal('login')">
+                <span>🔐</span> Iniciar Sesión
+            </div>
+            <div class="sidebar-item" onclick="logout()">
+                <span>🚪</span> Cerrar Sesión
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main-layout">
+        <main>
+
+            <!-- Cartelera dinámica -->
+            <div class="section-header">
+                <h2 class="section-title">Lo más popular esta semana</h2>
+            </div>
+            <div class="movie-grid" id="container-movies"></div>
+
+            <!-- Fútbol en Vivo -->
+            <section class="category-section">
+                <h2 class="category-title">⚽ Fútbol en Vivo</h2>
+                <div class="cards-container">
+                    <div class="card football-card">
+                        <div class="join">🔴 VIVO</div>
+                        <img src="imagenes/partido.jpeg" alt="Colombia vs Uruguay">
+                        <div class="card-info">
+                            <span class="comunidad-nombre">Colombia vs Uruguay</span>
+                            <p class="comunidad-descripcion">Eliminatorias 2026 · HOY 7:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="card football-card">
+                        <img src="imagenes/partido2.jpeg" alt="Brasil vs Argentina">
+                        <div class="card-info">
+                            <span class="comunidad-nombre">Brasil vs Argentina</span>
+                            <p class="comunidad-descripcion">Eliminatorias 2026</p>
+                        </div>
+                    </div>
+                    <div class="card football-card">
+                        <img src="imagenes/partido3.jpeg" alt="Ecuador vs Chile">
+                        <div class="card-info">
+                            <span class="comunidad-nombre">Ecuador vs Chile</span>
+                            <p class="comunidad-descripcion">Eliminatorias 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Música -->
+            <section class="category-section">
+                <h2 class="category-title">🎵 Música para ti</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="imagenes/cancion.jpg" alt="Canción">
+                        <div class="card-info">
+                            <span class="comunidad-nombre">Top Hits 2026</span>
+                            <div class="stars">★★★★★</div>
+                            <input type="text" class="comment-input" placeholder="¿Qué te pareció?">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="imagenes/blessd.jpeg" alt="Blessd">
+                        <div class="card-info">
+                            <span class="comunidad-nombre">Blessd</span>
+                            <div class="stars">★★★★☆</div>
+                            <input type="text" class="comment-input" placeholder="¿Qué te pareció?">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="imagenes/vallenato.jpeg" alt="Vallenato">
+                        <div class="card-info">
+                            <span class="comunidad-nombre">Vallenato Clásico</span>
+                            <div class="stars">★★★★☆</div>
+                            <input type="text" class="comment-input" placeholder="¿Qué te pareció?">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="imagenes/poster.jpg" alt="Álbum">
+                        <div class="card-info">
+                            <span class="comunidad-nombre">Lo Más Escuchado</span>
+                            <div class="stars">★★★☆☆</div>
+                            <input type="text" class="comment-input" placeholder="¿Qué te pareció?">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">🤖 Chat con Gemini</h2>
+                <div class="cards-container ai-widget">
+                    <div class="card ai-card">
+                        <div class="card-info">
+                            <p class="ai-note">Importante: abre la aplicación desde <strong>http://localhost:3000</strong> después de ejecutar <code>npm start</code>.</p>
+                            <textarea id="aiPrompt" placeholder="Pregunta a Gemini sobre películas, reseñas o recomendaciones..." rows="4"></textarea>
+                            <button class="btn-yellow" id="aiSendBtn">Preguntar a Gemini</button>
+                            <button class="btn-yellow ai-check-btn" id="aiCheckBtn" type="button">Verificar servicio AI</button>
+                            <div id="aiStatus" class="ai-status">Estado: no verificado</div>
+                            <div id="aiResponse" class="ai-response">Escribe una pregunta y presiona el botón para recibir una respuesta de Gemini.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== MODAL LOGIN / REGISTRO ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <button class="modal-close" onclick="cerrarModal()">×</button>
+            <img src="imagenes/logo.png" alt="Logo" class="modal-logo">
+
+            <!-- Vista: Login -->
+            <div id="vistaLogin">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" id="loginUser" class="modal-input" placeholder="Nombre de usuario">
+                <input type="password" id="loginPass" class="modal-input" placeholder="Contraseña">
+                <button class="btn-modal-submit" onclick="hacerLogin()">Entrar</button>
+                <p id="modal-msg" style="color:#ef4444;"></p>
+                <p class="modal-switch">¿No tienes cuenta? <a onclick="cambiarVista('registro')">Regístrate</a></p>
+            </div>
+
+            <!-- Vista: Registro -->
+            <div id="vistaRegistro" style="display:none;">
+                <h2>Crear Cuenta</h2>
+                <input type="text" id="regName" class="modal-input" placeholder="Nombre completo">
+                <input type="email" id="regEmail" class="modal-input" placeholder="Correo electrónico">
+                <input type="password" id="regPass" class="modal-input" placeholder="Contraseña">
+                <button class="btn-modal-submit" onclick="hacerRegistro()">Registrarme</button>
+                <p id="modal-msg-reg" style="color:#39ff14; margin-top:10px; font-size:0.85rem;"></p>
+                <p class="modal-switch">¿Ya tienes cuenta? <a onclick="cambiarVista('login')">Inicia sesión</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>

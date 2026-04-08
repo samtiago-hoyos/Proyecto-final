@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustReview - Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page"> <div class="login-container">
+        <img src="imagenes/logo.png" alt="Logo" class="logo">
+        <h2>Crear Cuenta</h2>
+        
+        <form id="registerForm">
+            <input type="text" id="regName" placeholder="Nombre completo" required>
+            <input type="email" id="regEmail" placeholder="Correo electrónico" required>
+            <input type="password" id="regPass" placeholder="Contraseña" required>
+            <input type="password" id="confirmPass" placeholder="Confirmar contraseña" required>
+            
+            <button type="submit">Registrarme</button>
+            <p id="regMessage" style="margin-top: 15px; font-weight: bold;"></p>
+        </form>
+
+        <p>¿Ya tienes cuenta? <a href="login.html" style="color: #2a5298; font-weight: bold;">Inicia sesión</a></p>
+        <p><a href="index.html" style="color: #666; text-decoration: none; font-size: 0.8em;">← Volver al inicio</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

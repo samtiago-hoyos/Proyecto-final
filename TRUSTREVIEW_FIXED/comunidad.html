@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustReview - Comunidades</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+       <img src="imagenes/logo.png" alt="">
+        <div class="user-info">
+            <span id="display-user">usuario_123</span>
+            <div class="user-avatar-mini">👤</div>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <a href="index.html" class="icon" title="Inicio">▶</a>
+        <div class="icon" title="Cine">🎬</div>
+        <div class="icon" title="Deportes">⚽</div>
+        <div class="icon" title="Favoritos">❤️</div>
+        <div class="icon" title="Perfil">👤</div>
+    </aside>
+
+    <main class="main-content">
+        
+        <section class="category-section">
+            <h2 class="category-title">Explorar Grupos</h2>
+            <div id="comunidades-app" class="cards-container">
+                </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Muro de la Comunidad</h2>
+            <div class="feed-container">
+                <article class="feed-post">
+                    <div class="post-header">
+                        <img src="imagenes/series.jpeg" alt="Comunidad Banner" class="post-banner">
+                        <div class="post-banner-title">SerieToon Latino</div>
+                    </div>
+
+                    <div class="comment-write-area">
+                        <input type="text" placeholder="Comparte una opinión..." class="comment-input">
+                        <button class="btn-send">Publicar</button>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="user-badge-mini">👤</div>
+                            <div class="review-body">
+                                <strong>Laura M.</strong>
+                                <p>“El final de la temporada fue increíble, ¡no puedo esperar a la siguiente! 😱”</p>
+                                <div class="review-footer">💬 12 respuestas · ❤️ 45</div>
+                            </div>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="user-badge-mini">👤</div>
+                            <div class="review-body">
+                                <strong>Carlos R.</strong>
+                                <p>“¿Alguien recomienda series similares a esta? Busco algo de suspenso.”</p>
+                                <div class="review-footer">💬 3 respuestas · ❤️ 10</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

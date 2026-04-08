@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustReview - Plataforma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="platform-body">
+
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="imagenes/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar películas...">
+            <button class="search-icon">🔍</button>
+        </div>
+        <div class="login-actions">
+            <button class="btn-yellow">Inicio de sesión</button>
+            <button class="btn-yellow">Registrarme</button>
+        </div>
+    </nav>
+
+    <div class="filter-container">
+        <div class="filter-group">
+            <select><option>Género</option></select>
+            <select><option>Año</option></select>
+            <select><option>Calificación</option></select>
+            <select><option>Más populares</option></select>
+            <button class="btn-apply">Aplicar</button>
+        </div>
+    </div>
+
+    <div class="main-layout">
+        <main class="content-area">
+            <h2 class="section-title">Películas</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/150x220?text=The+Exorcist" alt="Exorcista" class="movie-poster">
+                    <div class="movie-info">
+                        <p class="movie-title">The Exorcist</p>
+                        <p class="movie-rating">⭐⭐⭐⭐ 4.2</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/150x220?text=The+100" alt="100" class="movie-poster">
+                    <div class="movie-info">
+                        <p class="movie-title">The 100</p>
+                        <p class="movie-rating">⭐⭐⭐ 3.5</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Series</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/150x220?text=La+Casa+de+Papel" alt="LCDP" class="movie-poster">
+                    <div class="movie-info">
+                        <p class="movie-title">La Casa de Papel</p>
+                        <p class="movie-rating">⭐⭐⭐⭐⭐ 4.8</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-item" onclick="location.href='perfil.html'">Perfil</div>
+            <div class="sidebar-item">Configuración</div>
+            <div class="sidebar-item" onclick="location.href='categorias.html'">Categorías</div>
+            <div class="sidebar-item">Comunidades</div>
+            
+            <div class="quick-icons">
+                <div class="icon-circle">▶</div>
+                <div class="icon-circle">📺</div>
+                <div class="icon-circle">⚽</div>
+                <div class="icon-circle">👤</div>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
